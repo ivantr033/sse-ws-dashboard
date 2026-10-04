@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 30px;
+    background-color: #f4f5f7;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+    background-size: 20px 20px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+#dashboard-app-wrapper {
+    display: flex;
+    gap: 24px;
+    max-width: 1000px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.control-panel-box {
+    flex: 1;
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2d3748;
+}
+
+#instances-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+/* Fila de servidor individual */
+.instance-card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    background: #f8fafc;
+}
+
+.instance-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.instance-id-text {
+    font-size: 11px;
+    color: #718096;
+    font-family: monospace;
+}
+
+.instance-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-dot.running {
+    background: #10b981;
+    box-shadow: 0 0 6px #10b981;
+}
+
+.status-dot.stopped {
+    background: #ef4444;
+}
+
+.instance-actions-group {
+    display: flex;
+    gap: 8px;
+}
+
+.action-icon-btn {
+    background: #ffffff;
+    border: 1px solid #a0aec0;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    transition: all 0.15s ease;
+}
+
+.action-icon-btn:hover {
+    background: #edf2f7;
+    border-color: #4a5568;
+}
+
+.action-icon-btn.delete-btn:hover {
+    background: #fee2e2;
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+#global-create-instance-btn {
+    background: #ffffff;
+    border: 1px solid #4a5568;
+    color: #2d3748;
+    padding: 10px 16px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+    align-self: flex-end;
+}
+
+#global-create-instance-btn:hover {
+    background: #f7fafc;
+}
+
+.worklog-panel-box {
+    width: 380px;
+    background: #ffffff;
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+}
+
+#worklog-terminal-viewport {
+    flex-grow: 1;
+    height: 400px;
+    background: #0f172a;
+    border-radius: 6px;
+    padding: 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-sizing: border-box;
+}
+
+.log-entry-line {
+    font-size: 12px;
+    font-family: monospace;
+    line-height: 1.4;
+    color: #94a3b8;
+}
+
+.log-time {
+    color: #38bdf8;
+}
+
+.log-id {
+    color: #64748b;
+}
+
+.log-info {
+    color: #f1f5f9;
+    font-weight: bold;
+}
+
+.log-info.created {
+    color: #fbbf24;
+}
+
+.log-info.started {
+    color: #34d399;
+}
+
+.log-info.stopped {
+    color: #f87171;
+}
