@@ -21,18 +21,18 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-          cache-dependency-path: sse-ws-dashboard/frontend/package-lock.json
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Install Dependencies
-        working-directory: sse-ws-dashboard/frontend
+        working-directory: frontend
         run: npm install
 
       - name: Build Production HTML Assets
-        working-directory: sse-ws-dashboard/frontend
+        working-directory: frontend
         run: npm run build
 
       - name: Deploy static bundle to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: sse-ws-dashboard/frontend/dist
+          folder: frontend/dist
           branch: gh-pages
