@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Infrastructure Dashboard (SSE * Star)</title>
+</head>
+
+<body>
+
+    <div id="dashboard-app-wrapper">
+
+        <!-- Левая часть: Управление инстансами -->
+        <div class="control-panel-box">
+            <h2 class="panel-title">Your virtual servers</h2>
+            <div id="instances-list-container">
+                <!-- Dynamic -->
+            </div>
+            <button id="global-create-instance-btn">Create new instance</button>
+        </div>
+
+        <!-- Правая часть: Worklog (SSE трансляция) -->
+        <div class="worklog-panel-box">
+            <h2 class="panel-title">Worklog</h2>
+            <div id="worklog-terminal-viewport">
+                <!-- Dynamic from Server-Sent Events -->
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
