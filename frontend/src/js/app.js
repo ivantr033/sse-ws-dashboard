@@ -1,4 +1,4 @@
-import CloudDashboard from './CloudDashboard';
+import CloudDashboard from './CloudDashBoard';
 
 document.addEventListener('DOMContentLoaded', () => {
     const wrapper = document.getElementById('dashboard-app-wrapper');
