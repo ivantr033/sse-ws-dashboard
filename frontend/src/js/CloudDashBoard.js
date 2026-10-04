@@ -72,7 +72,19 @@ export default class CloudDashboard {
         this.ws.addEventListener('message', () => {
             this.loadInstancesList();
         });
+
+        // Catch the 'error' event when the SSE stream flickers or the network drops.
+        this.eventSource.addEventListener('error', () => {
+            const connectionErrorLog = {
+                id: "????????-????-????-????-????????????",
+                info: "CONNECTION LOST / RECONNECTING...",
+                timestamp: new Date().toLocaleTimeString()
+            };
+
+            this.appendLogToTerminal(connectionErrorLog);
+        });
     }
+
 
     loadInstancesList() {
         this.api.list((err, response) => {
@@ -116,7 +128,10 @@ export default class CloudDashboard {
         line.className = 'log-entry-line';
 
         // Format the aesthetic classes
-        const infoClass = log.info.toLowerCase();
+        let infoClass = log.info.toLowerCase();
+        if (log.info.includes("CONNECTION LOST")) {
+            infoClass = "stopped";
+        }
 
         // Normalize the timestamps handled by Store.js on the server.
         const time = log.timeStamp || log.timestamp || new Date().toLocaleTimeString();

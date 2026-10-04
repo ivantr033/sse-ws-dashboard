@@ -12,10 +12,16 @@ const createRequest = async (options = {}) => {
 
     try {
         const response = await fetch(url, config);
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
         if (response.status === 204) {
             if (callback) callback(null, null);
             return null;
         }
+
         const result = await response.json();
         if (callback) callback(null, result);
         return result;
